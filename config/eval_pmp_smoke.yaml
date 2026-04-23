@@ -1,0 +1,18 @@
+init_num: 1
+iter_num: 2
+swap_num: 2
+device: cpu
+
+data_path: ./data/smoke_20_1/
+fac_range: "range(5, 16, 5)"
+save_path: ./data/smoke_20_1/result_pmp_smoke/
+
+methods:
+  PPO-swap:
+    run_fn: run_ppo_swap
+    init_num: 1
+    iter_num: 2
+    swap_num: 2
+    ckpt: ./logs/smoke_test/checkpoints/last.ckpt
+    name: smoke_test
+    device: cpu

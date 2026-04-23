@@ -1,0 +1,29 @@
+log_name: smoke_test
+ppo:
+  batch_size: 4
+  clip_decay: 0.998
+  clip_ratio: 0.1
+  critic_weight: 0.5
+  data_path: ./data/smoke_20_1/
+  ent_weight: 0.01
+  gamma: 0.99
+  gradient_clip_val: 1
+  lam: 0.95
+  lr: 0.005
+  lr_gamma: 0.995
+  model_params:
+    c_hidden: 16
+    c_out: 16
+    edge_dim: 1
+    fac_c_in: 7
+    heads: 1
+    layer_name: GraphConv
+    num_layers: 2
+  nb_optim_iters: 1
+  steps_per_epoch: 44
+ppo_trainer:
+  accelerator: cpu
+  devices: 1
+  enable_checkpointing: true
+  max_epochs: 1
+  track_grad_norm: 2
